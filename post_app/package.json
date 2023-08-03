@@ -23,10 +23,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +46,8 @@
     ]
   },
   "devDependencies": {
-    "react-test-renderer": "^18.2.0"
+    "@craco/craco": "^7.1.0",
+    "react-test-renderer": "^18.2.0",
+    "ts-loader": "^9.4.4"
   }
 }

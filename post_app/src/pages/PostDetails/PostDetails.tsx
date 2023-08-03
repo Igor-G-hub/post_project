@@ -15,7 +15,6 @@ const PostDetails: React.FC<Props> = () => {
   const { postList } = useContext(PostContext);
   const [postData, setPostData] = useState<client.Post>();
 
-  console.log("postData", postData);
   useEffect(() => {
     if (postList.length) {
       const post = postList.find((post: client.Post) => post.id === Number(id));
@@ -35,8 +34,6 @@ const PostDetails: React.FC<Props> = () => {
       });
     }
   };
-
-  console.log("postData", postData);
 
   return postData ? <Post data={postData} /> : null;
 };

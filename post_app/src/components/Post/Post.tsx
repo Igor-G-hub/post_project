@@ -7,6 +7,7 @@ import { AccountIcon } from "../../shared/assets";
 import UserImage from "../../shared/assets/images/michael-dam-mEZ3PoFGs_k-unsplash (1).jpg";
 import withLogging from "../HOC/withLogging";
 import { PROP_MESSAGE } from "../../const";
+import Comment from "../Comment/Comment";
 
 export interface PostProps {
   data: client.Post;
@@ -29,16 +30,7 @@ const Post: React.FC<PostProps> = ({ data }) => {
       <div className={styles.commentsContainer}>
         <h3>Comments:</h3>
         {comments.map((comment) => (
-          <div key={comment.id} className={styles.comments}>
-            <div
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <AccountIcon style={{ width: "40px" }} />
-              <h5 className={styles.email}>{comment.email}</h5>
-            </div>
-            <h5>{comment.name}</h5>
-            <p style={{ fontSize: "1rem" }}>{comment.body}</p>
-          </div>
+          <Comment key={comment.id} data={comment} />
         ))}
       </div>
     </div>

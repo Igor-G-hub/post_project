@@ -1,9 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Post from "../components/Post/Post";
 import Filter from "../components/Filter/Filter";
 import { filteredlist } from "../testingMocks/testingMocks";
-import { client } from "../typings";
 
 describe("Filter", () => {
   const renderComponent = () =>
