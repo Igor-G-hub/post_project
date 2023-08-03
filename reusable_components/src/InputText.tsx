@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import styles from "./InputText.module.scss";
-import withLogging from "../../../components/HOC/withLogging";
-import { PROP_MESSAGE } from "../../../const";
 
 interface InputProps {
   label?: string;
@@ -25,7 +22,6 @@ const InputText: React.FC<InputProps> = ({
     <>
       {label && <label>{label}</label>}
       <input
-        className={`${styles["default"]}`}
         type="text"
         placeholder={placeholder}
         onChange={onChange}
@@ -37,4 +33,4 @@ const InputText: React.FC<InputProps> = ({
 
 InputText.displayName = "InputText";
 
-export default withLogging(InputText, "InputText", PROP_MESSAGE);
+export default InputText;

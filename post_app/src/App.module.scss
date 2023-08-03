@@ -1,0 +1,26 @@
+@use './styles/variables.module.scss' as *;
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("./shared/assets/images/brooke-cagle-TxSVqNgnjq4-unsplash (2).jpg");
+    position: relative;
+    background-repeat: repeat;
+   
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.appContainer {
+    max-width: $lg-breakpoint;
+    margin: auto;
+}

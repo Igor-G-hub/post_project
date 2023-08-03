@@ -1,25 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import InputText from "../../shared/ui/InputText/InputText";
 import { client } from "../../typings";
+import { SearchIcon } from "../../shared/assets";
+import styles from "./Filter.module.scss";
+import { PROP_MESSAGE } from "../../const";
+import withLogging from "../HOC/withLogging";
 
 interface Props {
   filteredPostList: client.Post[];
   postList: client.Post[];
   setFilteredPostList: React.Dispatch<React.SetStateAction<client.Post[]>>;
-  propsMessage?: string;
 }
 
 const Filter: React.FC<Props> = ({
   filteredPostList,
   setFilteredPostList,
   postList,
-  propsMessage,
 }) => {
   const [filterInputValue, setFilterInputValue] = useState<string>("");
-
-  useEffect(() => {
-    propsMessage && console.log(`${propsMessage} ${Filter.displayName}`);
-  }, []);
 
   useEffect(() => {
     if (filterInputValue.length) {
@@ -33,19 +31,16 @@ const Filter: React.FC<Props> = ({
   }, [filterInputValue, postList]);
 
   return (
-    <div>
+    <div className={styles.container}>
       <InputText
-        placeholder="search"
         value={filterInputValue}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setFilterInputValue(e.target.value)
         }
-        propsMessage={propsMessage}
       />
+      <SearchIcon className={styles.inputIcon} />
     </div>
   );
 };
 
-Filter.displayName = "Filter";
-
-export default Filter;
+export default memo(withLogging(Filter, "Filter", PROP_MESSAGE));

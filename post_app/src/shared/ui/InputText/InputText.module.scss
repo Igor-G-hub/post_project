@@ -1,0 +1,13 @@
+@use "../../../styles/variables.module.scss" as *;
+
+.default {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid $grey-light;
+    border-radius: 1rem;
+    color: $secondary-color;
+
+    &:focus {
+        outline: none;
+    }
+}
