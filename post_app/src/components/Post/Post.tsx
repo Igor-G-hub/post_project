@@ -8,18 +8,13 @@ import UserImage from "../../shared/assets/images/michael-dam-mEZ3PoFGs_k-unspla
 import withLogging from "../HOC/withLogging";
 import { PROP_MESSAGE } from "../../const";
 
-interface Props {
+export interface PostProps {
   data: client.Post;
-  propsMessage?: string;
 }
 
-const Post: React.FC<Props> = ({ data, propsMessage }) => {
+const Post: React.FC<PostProps> = ({ data }) => {
   const { title, username, body, comments } = data;
   const path = `${ROUTES.post.replace(":id", String(data.id))}`;
-
-  useEffect(() => {
-    propsMessage && console.log(`${propsMessage} ${Post.displayName}`);
-  }, []);
 
   return (
     <div className={styles.postContainer}>
@@ -29,7 +24,7 @@ const Post: React.FC<Props> = ({ data, propsMessage }) => {
       </div>
       <Link to={path}>
         <h2>{title}</h2>
-        <p>{data.body}</p>
+        <p>{body}</p>
       </Link>
       <div className={styles.commentsContainer}>
         <h3>Comments:</h3>

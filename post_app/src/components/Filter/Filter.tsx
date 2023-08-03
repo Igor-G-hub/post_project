@@ -19,6 +19,10 @@ const Filter: React.FC<Props> = ({
 }) => {
   const [filterInputValue, setFilterInputValue] = useState<string>("");
 
+  console.log("filteredPostList", filteredPostList);
+  console.log("postList", postList);
+  console.log("setFilteredPostList", setFilteredPostList);
+
   useEffect(() => {
     if (filterInputValue.length) {
       const newFilteredPostList = filteredPostList.filter((post) =>

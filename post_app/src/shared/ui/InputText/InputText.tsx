@@ -25,7 +25,7 @@ const InputText: React.FC<InputProps> = ({
     <>
       {label && <label>{label}</label>}
       <input
-        className={`${styles["bordered"]}`}
+        className={`${styles["default"]}`}
         type="text"
         placeholder={placeholder}
         onChange={onChange}

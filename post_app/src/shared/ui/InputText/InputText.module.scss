@@ -1,6 +1,6 @@
 @use "../../../styles/variables.module.scss" as *;
 
-.bordered {
+.default {
     width: 100%;
     padding: 10px 40px;
     border: 1px solid $grey-light;
