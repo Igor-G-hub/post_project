@@ -5,18 +5,17 @@ import { createPostObject } from "./helpers/utils";
 import Filter from "../../components/Filter/Filter";
 import { PostContext } from "../../components/PostProvider/PostProvider";
 import { client } from "../../typings";
+import withLogging from "../../components/HOC/withLogging";
+import { PROP_MESSAGE } from "../../const";
 
-interface Props {
-  propsMessage?: string;
-}
+interface Props {}
 
-const PostList: React.FC<Props> = ({ propsMessage }) => {
+const PostList: React.FC<Props> = () => {
   const { postList, setPostList, filteredPostList, setFilteredPostList } =
     useContext(PostContext);
 
   useEffect(() => {
     processData();
-    propsMessage && console.log(`${propsMessage} ${PostList.displayName}`);
   }, []);
 
   const processData = async () => {
@@ -30,15 +29,12 @@ const PostList: React.FC<Props> = ({ propsMessage }) => {
         filteredPostList={filteredPostList}
         setFilteredPostList={setFilteredPostList}
         postList={postList}
-        propsMessage={propsMessage}
       />
       {filteredPostList.map((post) => (
-        <Post key={post.id} data={post} propsMessage={propsMessage} />
+        <Post key={post.id} data={post} />
       ))}
     </>
   );
 };
 
-PostList.displayName = "PostList";
-
-export default memo(PostList);
+export default memo(withLogging(PostList, "PostList", PROP_MESSAGE));

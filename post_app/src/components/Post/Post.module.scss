@@ -1,0 +1,70 @@
+@use "../../styles/variables.module.scss" as *;
+
+.postContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $grey-light;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1.2rem;
+    background-color: white;
+
+    h3, h5, p, a {
+      color: $secondary-color;
+    }
+
+    .user {
+      display: flex; 
+      align-items: center;
+
+      h3 {
+        color: $blue;
+        font-size: 1rem;
+        margin-left: .5rem;
+      }
+
+      img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        
+      }
+    }
+
+    h5 {
+      margin: 0;
+    }
+
+    svg {
+      fill: $secondary-color;
+    }
+  
+    p {
+      color: $secondary-color;
+      font-size: 1.2rem;
+    }
+  
+    .commentsContainer {
+      margin-top: 2rem;
+
+      .comments {
+        padding: 0.625rem;
+        margin-left: 1rem;
+
+        .email {
+          color: $blue;
+        }
+      }
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

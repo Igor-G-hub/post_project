@@ -29,16 +29,9 @@ const Children: React.FC<ChildrenProps> = ({ children, string }) => {
   return <>{children}</>;
 };
 
-const PostProvider: React.FC<PostProviderProps> = ({
-  children,
-  propsMessage,
-}) => {
+const PostProvider: React.FC<PostProviderProps> = ({ children }) => {
   const [postList, setPostList] = useState<client.Post[]>([]);
   const [filteredPostList, setFilteredPostList] = useState<client.Post[]>([]);
-
-  useEffect(() => {
-    propsMessage && console.log(`${propsMessage} ${PostProvider.displayName}`);
-  }, []);
 
   return (
     <PostContext.Provider
@@ -48,7 +41,5 @@ const PostProvider: React.FC<PostProviderProps> = ({
     </PostContext.Provider>
   );
 };
-
-PostProvider.displayName = "PostProvider";
 
 export { PostContext, PostProvider };

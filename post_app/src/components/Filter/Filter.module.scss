@@ -1,0 +1,18 @@
+@use "../../styles/variables.module.scss" as *;
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    padding-top: 1rem;
+    position: relative;
+
+    .inputIcon {
+        width: 25px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        fill: $secondary-color;
+
+    }
+}
