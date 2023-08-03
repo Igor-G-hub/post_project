@@ -1,13 +1,13 @@
-# post_project
+# Post project
 
-follow this steps to start the aplication.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-cd post_app
+## Available Scripts
 
-post_project/post_app/ yarn install
+### cd into post_project/post_app/ folder and start this commands:
 
-post_project/post_app/ yarn start
+### `yarn install` installi node packages
 
-for testing:
+### `yarn start` starting the app
 
-post_project/post_app/ yarn test
+### `yarn test` starting built-in unit tests
